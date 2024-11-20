@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="text-center">EDIT</h2>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+<div class="mb-3">
+  <label class="form-label">Title</label>
+  <input type="text" class="form-control" name="t" value="{{book.title}}" placeholder="Enter Title">
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Author</label>
+  <input type="text" class="form-control" name="n" value="{{book.author}}" placeholder="Enter Author Name">
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Language</label>
+  <input type="text" class="form-control" name="l" value="{{book.language}}" placeholder="Enter Language">
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Price</label>
+  <input type="text" class="form-control" name="p" value="{{book.price}}" placeholder="Enter Price">
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Pages</label>
+  <input type="text" class="form-control" name="pa" value="{{book.page}}" placeholder="Enter pages number">
+</div>
+
+  <div class="mb-3">
+      <img src="{{book.cover.url}}" height="100px" width="100px">
+  <label class="form-label">Image</label>
+  <input type="file" class="form-control" name="c" >
+</div>
+
+  <div class="mb-3">
+      <a href="{{book.pdf.url}}">Document</a>
+  <label class="form-label">File</label>
+  <input type="file" class="form-control" name="f" >
+</div>
+
+<div class="mb-3">
+  <input type="submit" class="btn btn-dark text-light px-4">
+</div>
+  </form>
+{% endblock %}

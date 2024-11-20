@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="text-center">LOGIN PAGE</h2>
+<div class="container">
+<form style="color:white" method="post" >
+    {% csrf_token %}
+  <div class="mb-3">    <label  class="form-label">USER NAME</label>
+    <input type="text" class="form-control"  name='u' placeholder="ENTER YOUR USERNAME">  </div>
+    <div class="mb-3">
+    <label  class="form-label">PASSWORD</label>    <input type="password" class="form-control"  name='p' placeholder="ENTER YOUR PASSWORD">
+  </div>
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+</div>
+</form>
+{% endblock %}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Login</h1>-->
+
+<!--</body>-->
+<!--</html>-->
