@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+    <h1>DETAILS</h1>
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{movie.poster.url}}" height="250px" width="100px" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Title: {{movie.title}}</h5>
+        <p class="card-text">Language: {{movie.language}}</p>
+          <p class="card-text">Year: {{movie.year}}</p>
+
+          <div class="d-flex justify-content-between">
+              <a href="{% url 'edit' movie.id %}" class="btn btn-dark">Update</a>
+              <a href="{% url 'delete' movie.id %}" class="btn btn-dark">Delete</a>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+{% endblock %}
